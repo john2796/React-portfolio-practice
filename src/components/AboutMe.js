@@ -4,7 +4,7 @@ export default class AboutMe extends Component {
   render() {
     return (
       <div>
-        <h1>Contact Here</h1>
+        <h1>About Me</h1>
       </div>
     );
   }

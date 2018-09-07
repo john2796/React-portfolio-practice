@@ -1,37 +1,52 @@
 import React, { Component } from "react";
 
+import Main from "./components/Main";
+import { Link } from "react-router-dom";
 import { Layout, Header, Navigation, Drawer, Content } from "react-mdl";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div style={{ height: "300px", position: "relative" }}>
+      <div className="App">
         <Layout fixedHeader>
           <Header
+            scroll
+            className="header-color"
             title={
-              <span>
-                <span style={{ color: "#ddd" }}>Area / </span>
-                <strong>The Title</strong>
-              </span>
+              <Link
+                to="/"
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  backgroundColor: "none"
+                }}
+              >
+                Title
+              </Link>
             }
           >
             <Navigation>
-              <a href="/">Link</a>
-              <a href="/">Link</a>
-              <a href="/">Link</a>
-              <a href="/">Link</a>
+              <Link to="/resume">Resume</Link>
+              <Link to="/aboutme">About Me</Link>
+              <Link to="/projects">Projects</Link>
+              <Link to="/contact">Contacts</Link>
             </Navigation>
           </Header>
-          <Drawer title="Title">
+          <Drawer title={<Link to="/">John Miranda</Link>}>
             <Navigation>
-              <a href="/">Link</a>
-              <a href="/">Link</a>
-              <a href="/">Link</a>
-              <a href="/">Link</a>
+              <Link to="/resume">Resume</Link>
+              <Link to="/aboutme">About Me</Link>
+              <Link to="/projects">Projects</Link>
+              <Link to="/contact">Contacts</Link>
             </Navigation>
           </Drawer>
-          <Content />
+          <Content>
+            <div className="page-content">
+              {/* this is the Main for all the Components  */}
+              <Main />
+            </div>
+          </Content>
         </Layout>
       </div>
     );
