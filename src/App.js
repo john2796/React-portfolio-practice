@@ -22,7 +22,7 @@ class App extends Component {
                   backgroundColor: "none"
                 }}
               >
-                Title
+                Miranda
               </Link>
             }
           >
@@ -33,7 +33,13 @@ class App extends Component {
               <Link to="/contact">Contacts</Link>
             </Navigation>
           </Header>
-          <Drawer title={<Link to="/">John Miranda</Link>}>
+          <Drawer
+            title={
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                John Miranda
+              </Link>
+            }
+          >
             <Navigation>
               <Link to="/resume">Resume</Link>
               <Link to="/aboutme">About Me</Link>
